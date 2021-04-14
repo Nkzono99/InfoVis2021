@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>Task 2</title>
+</head>
+
+<body>
+    <input type="number" id="x" value=5>
+    <input type="number" id="y" value=4>
+    <input type="number" id="z" value=8>
+    <br>
+    <input type="button" onclick="calculate()" value="calc">
+
+    <p id='minval'></p>
+    <p id='midval'></p>
+    <p id='maxval'></p>
+    <script src="vec3.js"></script>
+    <script>
+        function calculate() {
+            var x = parseInt(document.getElementById("x").value);
+            var y = parseInt(document.getElementById("y").value);
+            var z = parseInt(document.getElementById("z").value);
+            var v = new Vec3(x, y, z);
+            var min = v.min();
+            var mid = v.mid();
+            var max = v.max();
+            document.getElementById("minval").innerHTML = "Min: " + min;
+            document.getElementById("midval").innerHTML = "Mid: " + mid;
+            document.getElementById("maxval").innerHTML = "Max: " + max;
+        }
+    </script>
+</body>
+
+</html>
