@@ -1,6 +1,6 @@
-width,color
-20,blue
-100,red
-70,blue
-170,red
-150,blue
+label,width,color
+value1,20,blue
+value2,100,red
+value3,70,blue
+value4,170,red
+value5,150,blue
