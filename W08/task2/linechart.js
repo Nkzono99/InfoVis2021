@@ -15,6 +15,7 @@ class LineChart {
 
     init() {
         let self = this;
+        console.log(self.data)
 
         self.svg = d3.select(self.config.parent)
             .attr('width', self.config.width)
@@ -62,16 +63,6 @@ class LineChart {
 
     render() {
         let self = this;
-
-        // self.chart.selectAll("rect")
-        //     .data(self.data).enter()
-        //     .append("rect")
-        //     .attr("x", 0)
-        //     .attr("y", d => self.yscale(d.label))
-        //     .attr("width", d => self.xscale(d.value))
-        //     .attr("height", self.yscale.bandwidth());
-
-        console.log('Render')
 
         self.chart.append('path')
             .attr('d', self.line(self.data))

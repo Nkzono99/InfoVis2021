@@ -1,5 +1,6 @@
 d3.csv("https://nkzono99.github.io/InfoVis2021/W08/task1/data.csv")
       .then(data => {
+            data.forEach(d => { d.value = +d.value; });
             var config = {
                   parent: '#drawing_region',
                   width: 256,

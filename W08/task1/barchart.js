@@ -59,7 +59,6 @@ class BarChart {
 
     render() {
         let self = this;
-        console.log(self.data)
 
         self.chart.selectAll("rect")
             .data(self.data).enter()

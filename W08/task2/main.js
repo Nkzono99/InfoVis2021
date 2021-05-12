@@ -14,6 +14,7 @@ function plot(data) {
 
 d3.csv("https://nkzono99.github.io/InfoVis2021/W08/task2/data.csv")
     .then(data => {
+        data.forEach(d => { d.x = +d.x; d.y = +d.y; });
         plot(data)
     })
     .catch(error => {
