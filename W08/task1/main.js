@@ -6,7 +6,7 @@ var data = [
       { label: 'Egg', value: 80 },
 ];
 
-d3.csv("https://Nkzono99.github.io/InfoVis2021/W08/task1/data.csv")
+d3.csv("https://nkzono99.github.io/InfoVis2021/W08/task1/data.csv")
       .then(data => {
             var config = {
                   parent: '#drawing_region',
@@ -15,7 +15,6 @@ d3.csv("https://Nkzono99.github.io/InfoVis2021/W08/task1/data.csv")
                   margin: { top: 10, right: 10, bottom: 20, left: 60 },
                   xticks: 10,
                   yticks: 10,
-                  padrate: 0.2,
             };
 
             let barChart = new BarChart(config, data);
