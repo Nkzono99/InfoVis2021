@@ -71,6 +71,8 @@ class LineChart {
         //     .attr("width", d => self.xscale(d.value))
         //     .attr("height", self.yscale.bandwidth());
 
+        console.log('Render')
+
         self.chart.append('path')
             .attr('d', self.line(self.data))
             .attr('stroke', 'black')
