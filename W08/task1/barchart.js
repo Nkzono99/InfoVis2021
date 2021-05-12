@@ -59,6 +59,7 @@ class BarChart {
 
     render() {
         let self = this;
+        console.log(self.data)
 
         self.chart.selectAll("rect")
             .data(self.data).enter()
@@ -67,13 +68,5 @@ class BarChart {
             .attr("y", d => self.yscale(d.label))
             .attr("width", d => self.xscale(d.value))
             .attr("height", self.yscale.bandwidth());
-
-        // self.chart.selectAll("rect")
-        //     .data(self.data).enter()
-        //     .append("rect")
-        //     .attr("y", 0)
-        //     .attr("x", d => self.yscale(d.label))
-        //     .attr("height", d => self.xscale(d.value))
-        //     .attr("width", self.yscale.bandwidth());
     }
 }

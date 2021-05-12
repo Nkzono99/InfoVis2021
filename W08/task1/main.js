@@ -1,11 +1,3 @@
-var data = [
-      { label: 'Apple', value: 100 },
-      { label: 'Banana', value: 200 },
-      { label: 'Cookie', value: 50 },
-      { label: 'Doughnut', value: 120 },
-      { label: 'Egg', value: 80 },
-];
-
 d3.csv("https://nkzono99.github.io/InfoVis2021/W08/task1/data.csv")
       .then(data => {
             var config = {
