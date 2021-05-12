@@ -1,11 +1,3 @@
-var data = [
-    { label: 'Apple', value: 100 },
-    { label: 'Banana', value: 200 },
-    { label: 'Cookie', value: 50 },
-    { label: 'Doughnut', value: 120 },
-    { label: 'Egg', value: 80 }
-];
-
 var config = {
     parent: '#drawing_region',
     width: 256,
@@ -14,5 +6,11 @@ var config = {
     margin: { top: 10, right: 10, bottom: 20, left: 60 },
 };
 
-let pieChart = new PieChart(config, data)
-pieChart.update()
+d3.csv("https://nkzono99.github.io/InfoVis2021/W08/task1/data.csv")
+    .then(data => {
+        let pieChart = new PieChart(config, data)
+        pieChart.update()
+    })
+    .catch(error => {
+        console.log(error);
+    });
