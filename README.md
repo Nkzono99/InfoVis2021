@@ -16,3 +16,10 @@ Task2: <https://nkzono99.github.io/InfoVis2021/W04/task2.html>
 Task1: <https://nkzono99.github.io/InfoVis2021/W06/task1.html>
 
 Task2: <https://nkzono99.github.io/InfoVis2021/W06/task2.html>
+
+## W08
+Task1: <https://nkzono99.github.io/InfoVis2021/W08/task1/>
+
+Task2: <https://nkzono99.github.io/InfoVis2021/W08/task2/>
+
+Task3: <https://nkzono99.github.io/InfoVis2021/W08/task3/>
