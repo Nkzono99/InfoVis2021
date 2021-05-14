@@ -8,6 +8,7 @@ class LineChart {
             margin: config.margin || { top: 10, right: 10, bottom: 10, left: 10 },
             xticks: config.xticks || 10,
             yticks: config.yticks || 10,
+            r: config.r || 3
         };
         this.data = data;
         this.init();
@@ -50,9 +51,10 @@ class LineChart {
         self.yaxis_group = self.chart.append('g')
             .call(self.yaxis);
 
-        self.line = d3.line()
+        self.area = d3.area()
             .x(d => self.xscale(d.x))
-            .y(d => self.yscale(d.y));
+            .y1(d => self.yscale(d.y))
+            .y0(d3.max(self.data, d => self.yscale(d.y)));
     }
 
     update() {
@@ -65,8 +67,23 @@ class LineChart {
         let self = this;
 
         self.chart.append('path')
-            .attr('d', self.line(self.data))
+            .attr('d', self.area(self.data))
             .attr('stroke', 'black')
-            .attr('fill', 'none');
+            .attr('fill', '#FFE4B5')
+
+        // Add points
+        self.chart.selectAll("circle")
+            .data(self.data)
+            .enter()
+            .append("circle")
+            .attr("cx", d => self.xscale(d.x))
+            .attr("cy", d => self.yscale(d.y))
+            .attr("r", d => self.config.r)
+            .attr('class', (d, i) => `circle${i}`)
+            .each((d, i) => {
+                tippy(`circle.circle${i}`, {
+                    content: `(${d.x}, ${d.y})`,
+                });
+            });;
     }
 }
