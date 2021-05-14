@@ -8,6 +8,8 @@ class BarChart {
             margin: config.margin || { top: 10, right: 10, bottom: 10, left: 10 },
             xticks: config.xticks || 10,
             yticks: config.yticks || 10,
+            xlabel: config.xlabel || '',
+            title: config.title || '',
         };
         this.data = data;
         this.init();
@@ -49,6 +51,9 @@ class BarChart {
 
         self.yaxis_group = self.chart.append('g')
             .call(self.yaxis);
+
+        self.axis_group = self.svg.append('g')
+        self.title_group = self.svg.append('g')
     }
 
     update() {
@@ -66,6 +71,27 @@ class BarChart {
             .attr("x", 0)
             .attr("y", d => self.yscale(d.label))
             .attr("width", d => self.xscale(d.value))
-            .attr("height", self.yscale.bandwidth());
+            .attr("height", self.yscale.bandwidth())
+            .attr('class', (d, i) => `rect${i}`)
+            .each((d, i) => {
+                tippy(`rect.rect${i}`, {
+                    content: `${d.value} yen`,
+                });
+            });
+
+        self.axis_group.append('text')
+            .attr('x', self.config.width / 2)
+            .attr('y', self.config.margin.top + self.inner_height + 35)
+            .attr('font-size', '12pt')
+            .attr('text-anchor', 'middle')
+            .text(self.config.xlabel);
+
+        self.title_group.append('text')
+            .attr('x', self.config.width / 2)
+            .attr('y', self.config.margin.top - 10)
+            .attr('font-size', '12pt')
+            .attr('font-weight', 'bold')
+            .attr('text-anchor', 'middle')
+            .text(self.config.title);
     }
 }
