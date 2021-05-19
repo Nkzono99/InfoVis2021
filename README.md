@@ -23,3 +23,8 @@ Task1: <https://nkzono99.github.io/InfoVis2021/W08/task1/>
 Task2: <https://nkzono99.github.io/InfoVis2021/W08/task2/>
 
 Task3: <https://nkzono99.github.io/InfoVis2021/W08/task3/>
+
+## W10
+Task1: <https://nkzono99.github.io/InfoVis2021/W10/task1/>
+
+Task2: <https://nkzono99.github.io/InfoVis2021/W10/task2/>
