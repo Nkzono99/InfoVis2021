@@ -24,6 +24,7 @@ class Chart {
             parent: config.parent,
             width: config.width || 256,
             height: config.height || 256,
+            offset: config.offset || [0, 0],
             margin: config.margin || { top: 10, right: 10, bottom: 10, left: 10 },
             chart_margin: config.chart_margin || { top: 10, right: 10, bottom: 10, left: 10 },
             xlabel: config.xlabel || "",
@@ -43,8 +44,10 @@ class Chart {
             .attr('height', self.config.height);
 
         // Chart settings
-        var xOffset = self.config.margin.left + self.config.chart_margin.left;
-        var yOffset = self.config.margin.top + self.config.chart_margin.top;
+        var xOffset = self.config.offset[0]
+            + self.config.margin.left + self.config.chart_margin.left;
+        var yOffset = self.config.offset[1]
+            + self.config.margin.top + self.config.chart_margin.top;
         self.chart = self.svg.append('g')
             .attr('transform', `translate(${xOffset}, ${yOffset})`);
 
