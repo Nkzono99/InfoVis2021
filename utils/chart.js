@@ -64,7 +64,24 @@ class Chart {
             .attr('transform', `translate(${xOffset}, ${yOffset})`);
 
         // Add ylabel
-        self.labels.append("text")
+        self.ylabel = self.labels.append("text");
+
+        // Add xlabel
+        self.xlabel = self.labels.append("text");
+
+        // Add title
+        self.title = self.labels.append("text");
+
+    }
+
+    update(data) {
+        let self = this;
+
+        self._update(data);
+
+        self._render(data);
+
+        self.ylabel
             .attr("transform", "rotate(-90)")
             .attr("y", self.config.margin.left)
             .attr("x", -self.inner_height / 2 - self.config.margin.top)
@@ -73,8 +90,7 @@ class Chart {
             .attr("text-anchor", "middle")
             .text(self.config.ylabel);
 
-        // Add xlabel
-        self.labels.append("text")
+        self.xlabel
             .attr("x", self.inner_width / 2
                 + self.config.margin.left + self.config.chart_margin.left)
             .attr("y", self.inner_height
@@ -85,8 +101,7 @@ class Chart {
             .attr("text-anchor", "middle")
             .text(self.config.xlabel);
 
-        // Add title
-        self.labels.append("text")
+        self.title
             .attr("x", self.inner_width / 2
                 + self.config.margin.left + self.config.chart_margin.left)
             .attr("y", self.config.margin.top)
@@ -94,14 +109,6 @@ class Chart {
             .attr("font-weight", "bold")
             .attr("text-anchor", "middle")
             .text(self.config.title);
-    }
-
-    update(data) {
-        let self = this;
-
-        self._update(data);
-
-        self._render(data);
     }
 
     _update(data) {
