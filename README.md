@@ -31,6 +31,7 @@ Task2: <https://nkzono99.github.io/InfoVis2021/W10/task2/>
 
 
 ## Final
+Final: https://nkzono99.github.io/InfoVis2021/final/
 
 情報提供:NHK
 
