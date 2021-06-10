@@ -45,6 +45,10 @@
 </head>
 
 <body>
+    <small style="float:left;">
+        情報提供:NHK (加工したデータを使用)
+    </small>
+    <br><br>
     <div class="cards">
         <input type="radio" name="method" value="distance" id="method1" checked>Distance
         <input type="radio" name="method" value="dtw" id="method2">DTW
@@ -52,6 +56,10 @@
     <div class="cards">
         <div class="cards__item">
             <svg id="geochart_region"></svg>
+            <br>
+            <small style="float:right">
+                Made with Natural Earth.
+            </small>
         </div>
         <div class="cards__item">
             <svg id="dtwchart_region"></svg>
@@ -60,8 +68,8 @@
             <svg id="barchart_region"></svg>
         </div>
     </div>
-    
-	<div id="tooltip"></div>
+
+    <div id="tooltip"></div>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://nkzono99.github.io/InfoVis2021/utils/chart.js"></script>
     <script src="barchart.js"></script>
